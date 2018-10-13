@@ -22,7 +22,7 @@ func main() {
 
 /*
 
-[jd@jdpc go_learning]$ go run 08_web/08_web.go
+[jd@jdpc go_learning]$ go run 08_helloweb/08_helloweb.go
 Server starting ...
 ^Csignal: interrupt
 
