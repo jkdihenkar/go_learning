@@ -1,0 +1,55 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
+/*
+	accept input from prompt
+	fizz = div by 3
+	buzz = div by 5
+	fizzbuzz = div by 15
+*/
+
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Printf("Enter the limit n: ")
+
+	numStr, _ := reader.ReadString('\n')
+	fmt.Printf("Input is %s\n", numStr)
+
+	n, e := strconv.ParseInt(strings.TrimSuffix(numStr, "\n"), 10, 32)
+	fmt.Printf("DEBUG: Value of n is %d, err = %s\n", n, e)
+
+	var i int64
+
+	for i = 1; i <= n; i++ {
+		if i%15 == 0 {
+			fmt.Println(i, " = fizzbuzz")
+		} else if i%5 == 0 {
+			fmt.Println(i, " = buzz")
+		} else if i%3 == 0 {
+			fmt.Println(i, " = fizz")
+		}
+	}
+}
+
+/* SAMPLE OUTPUT -
+[jd@jdpc 02_loops_and_fizzbuzz]$ go run 02_loops_and_fizzbuzz.go
+Enter the limit n: 18
+Input is 18
+
+DEBUG: Value of n is 18, err = %!s(<nil>)
+3  = fizz
+5  = buzz
+6  = fizz
+9  = fizz
+10  = buzz
+12  = fizz
+15  = fizzbuzz
+18  = fizz
+*/
