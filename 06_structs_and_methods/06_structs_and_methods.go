@@ -7,7 +7,8 @@ import "fmt"
 	struct for map string -> struct
 	inline declare maps
 	range on maps demo
-	len of map and delete in map
+	value reciever method of struct
+	pointer reciever method of struct
 */
 
 type personalDetail struct {
@@ -50,7 +51,7 @@ func main() {
 
 /*
 
-[jd@jdpc go_learning]$ go run 06_structs_and_methods/05_structs_and_methods.go
+[jd@jdpc go_learning]$ go run 06_structs_and_methods/06_structs_and_methods.go
 jay Name is Jay Dihenkar. FavNum=6. Active=true
 Name is Jay Dihenkar. FavNum=99. Active=false
 
