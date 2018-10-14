@@ -27,6 +27,8 @@ func main() {
 		goroutines_examples.MainKeygenerator(option)
 	case "212":
 		goroutines_examples.MainChannelsAndPipelines(option)
+	case "213":
+		goroutines_examples.MainChannelsAndPipelinesEnhance(option)
 	default:
 		fmt.Println("Not a valid code section number!!")
 	}

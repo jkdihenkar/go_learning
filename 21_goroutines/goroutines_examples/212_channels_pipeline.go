@@ -2,6 +2,7 @@ package goroutines_examples
 
 import (
 	"fmt"
+	"time"
 )
 
 /*
@@ -42,6 +43,8 @@ func subOne(in <-chan int) <-chan int {
 	out := make(chan int)
 	go func() {
 		for n := range in {
+			// this operation is slow and expensive
+			time.Sleep(1 * time.Second)
 			out <- n - 1
 		}
 		close(out)
@@ -78,8 +81,10 @@ func MainChannelsAndPipelines(option string) {
 [jd@jdpc go_learning]$ time go run 21_goroutines/21_goroutines.go 212 c
 Ignoring option here ... c
 121 144 169 196 225 16 25 36 49 64 81 100
-real	0m0.169s
-user	0m0.172s
-sys	0m0.050s
+real	0m12.177s
+user	0m0.181s
+sys	0m0.062s
+
+# This could have been faster with more consumers in channel
 
 */
