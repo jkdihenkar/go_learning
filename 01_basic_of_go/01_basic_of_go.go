@@ -35,6 +35,10 @@ func main() {
 		basics.MainArraySlicesDemo()
 	case "014":
 		basics.MainRandomNumbers()
+	case "015":
+		basics.MainOcuurancesDemo()
+	case "016":
+		basics.MainFindReplaceDemo()
 	default:
 		fmt.Println("No such demo created yet!")
 	}
