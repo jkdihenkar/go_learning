@@ -6,6 +6,15 @@ import (
 	"log"
 )
 
+/*
+
+error handling
+logging
+error logging
+panic and fatal
+
+*/
+
 func division(x, y int) (int, error, error) {
 	if y == 0 {
 		return 0, nil, errors.New("Cannot divide by zero!")
@@ -23,20 +32,26 @@ func testDivide(x, y int) {
 	result, rem, err := division(x, y)
 
 	if err != nil {
-		log.Fatal(err)
+		// prints some additional information, useful for debugging purposes.
+		log.Panic(err)
 	} else {
-		fmt.Println("The result is", result)
+		log.Printf("The result is %d", result)
 	}
 	if rem != nil {
-		fmt.Println(rem)
+		log.Print(rem)
 	}
 }
 
 func main() {
+
+	log.Printf("Running test with 2/2 ...")
 	testDivide(2, 2)
+
+	log.Printf("Running test with 7/13 ...")
 	testDivide(7, 13)
 
 	// will generate log.Fatal()
+	log.Printf("Running test with 15/0 ...")
 	testDivide(15, 0)
 
 	fmt.Println("Anything after log.Fatal() will not be executed!")
