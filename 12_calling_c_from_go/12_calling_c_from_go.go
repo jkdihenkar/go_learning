@@ -7,9 +7,12 @@ import "C"
 import (
 	"fmt"
 	"unsafe"
+
+	"github.com/jkdihenkar/go_learning/12_calling_c_from_go/unsafe_example"
 )
 
 func main() {
+	unsafe_example.MainUnsafeDemo()
 	normalCGOInterfacing()
 	structCGOInterfacing()
 }
@@ -60,6 +63,8 @@ func normalCGOInterfacing() {
 [jd@jdpc 12_calling_c_from_go]$ go install
 [jd@jdpc 12_calling_c_from_go]$
 [jd@jdpc 12_calling_c_from_go]$ $GOPATH/bin/12_calling_c_from_go
+Safe print ->  456888777994
+Unsafe print ->  1622244618
 Greetings, Gopher from 2018! We come in peace :)
 Greetings, Gopher from 2018! We come in peace :)
 
