@@ -56,3 +56,27 @@ func main() {
 
 	fmt.Println("Anything after log.Fatal() will not be executed!")
 }
+
+/*
+
+[jd@jdpc go_learning]$ go run 10_error_handling/10_error_handling.go
+2018/10/14 14:27:37 Running test with 2/2 ...
+2018/10/14 14:27:37 The result is 1
+2018/10/14 14:27:37 Running test with 7/13 ...
+2018/10/14 14:27:37 The result is 0
+2018/10/14 14:27:37 There is a remainder!
+2018/10/14 14:27:37 Running test with 15/0 ...
+2018/10/14 14:27:37 Cannot divide by zero!
+panic: Cannot divide by zero!
+
+goroutine 1 [running]:
+log.Panic(0xc42004ff18, 0x1, 0x1)
+	/usr/lib/golang/src/log/log.go:326 +0xc0
+main.testDivide(0xf, 0x0)
+	learning_go/src/github.com/jkdihenkar/go_learning/10_error_handling/10_error_handling.go:36 +0xaf
+main.main()
+	learning_go/src/github.com/jkdihenkar/go_learning/10_error_handling/10_error_handling.go:55 +0xe1
+exit status 2
+
+
+*/
