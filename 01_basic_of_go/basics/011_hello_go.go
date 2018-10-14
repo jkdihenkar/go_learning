@@ -1,6 +1,8 @@
-package main
+package basics
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 	print hello
@@ -10,7 +12,7 @@ import "fmt"
 	range
 */
 
-func main() {
+func MainHelloGo() {
 	fmt.Println("Hello world....")
 	mainForTypes()
 }
@@ -56,12 +58,3 @@ func testInts() bunchOfNumbers {
 
 	return bunchOfNumbers{k, m, o, p}
 }
-
-/* OUTPUT -
-[jd@jdpc 02_loops_and_fizzbuzz]$ go run ../01_basic_of_go/01_hello.go
-Hello world....
-36
-j(0)|a(1)|y(2)|D(3)|
-3_4_5_6_7_
-15 123
-*/
