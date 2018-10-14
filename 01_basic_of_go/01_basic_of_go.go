@@ -39,6 +39,8 @@ func main() {
 		basics.MainOcuurancesDemo()
 	case "016":
 		basics.MainFindReplaceDemo()
+	case "017":
+		basics.MainSortSliceDemo()
 	default:
 		fmt.Println("No such demo created yet!")
 	}
