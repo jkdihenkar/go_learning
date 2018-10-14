@@ -10,9 +10,7 @@ import (
 /*
 	Pipeline ->
 		generate n numbers
-		add 3 to it
-		subtract 1 from it
-		square it
+		square it with parallel workers in pipeline
 
 */
 
