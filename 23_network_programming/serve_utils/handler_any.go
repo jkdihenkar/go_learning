@@ -36,3 +36,9 @@ func HandleConnection(c net.Conn) {
 		c.Write([]byte(string(result)))
 	}
 }
+
+func EchoMe(addr net.Addr, lenstream int, stream []byte) {
+	fmt.Println(addr)
+	fmt.Println(lenstream)
+	fmt.Println(string(stream))
+}

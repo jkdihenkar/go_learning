@@ -40,6 +40,12 @@ func main() {
 	case "236":
 		// tcp client
 		serve_utils.MainSimpleTCPClient(option)
+	case "237":
+		// concurrent UDP server
+		serve_utils.MainUDPServerConcurrent(option)
+	case "238":
+		// simple udp client
+		serve_utils.MainSimpleUDPClient(option)
 	default:
 		fmt.Println("Not a valid code section number!!")
 	}
