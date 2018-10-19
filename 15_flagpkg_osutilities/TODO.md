@@ -1,5 +1,6 @@
 # TODOs
 
+* package for cmdline like urfave/cli
 * try the flag package demo
 * dealing with dirs and symbolic links
 * implement pwd cmd
