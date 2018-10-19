@@ -37,6 +37,9 @@ func main() {
 	case "235":
 		// rpc client sync call
 		serve_utils.MainRPCHttpClientAsync(option)
+	case "236":
+		// tcp client
+		serve_utils.MainSimpleTCPClient(option)
 	default:
 		fmt.Println("Not a valid code section number!!")
 	}
