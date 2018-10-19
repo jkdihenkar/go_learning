@@ -23,10 +23,25 @@ func main() {
 
 	switch codenum {
 	case "231":
-		// channels and goroutines test example
+		// concurrent tcp server
 		serve_utils.MainTcpServerConcurrent(option)
+	case "232":
+		// concurrent unix socket server
+		serve_utils.MainUnixSocketServerConcurrent(option)
 	default:
 		fmt.Println("Not a valid code section number!!")
 	}
 
 }
+
+/*
+	go run 23_network_programming/go_servers.go 231 2230
+		# 231 code section tcp server
+		# 2230 = port
+		Test concurrency by running nc in two seperate terminals -
+		nc localhost 2230
+
+	go run 23_network_programming/go_servers.go 232 ./go.sock
+		nc -U ./go.sock
+
+*/

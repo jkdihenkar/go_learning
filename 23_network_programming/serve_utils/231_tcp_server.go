@@ -2,9 +2,7 @@ package serve_utils
 
 import (
 	"fmt"
-	"math/rand"
 	"net"
-	"time"
 )
 
 func MainTcpServerConcurrent(listen_port string) {
@@ -16,7 +14,6 @@ func MainTcpServerConcurrent(listen_port string) {
 		return
 	}
 	defer l.Close()
-	rand.Seed(time.Now().Unix())
 
 	for {
 		c, err := l.Accept()
@@ -28,3 +25,11 @@ func MainTcpServerConcurrent(listen_port string) {
 		go HandleConnection(c)
 	}
 }
+
+/*
+	go run 23_network_programming/go_servers.go 231 2230
+		# 231 code section tcp server
+		# 2230 = port
+		Test concurrency by running nc in two seperate terminals -
+		nc localhost 2230
+*/

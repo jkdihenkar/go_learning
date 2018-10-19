@@ -1,8 +1,7 @@
 # TODOs
 
-* tcp client and servers
+* tcp client
 * udp client and servers
 * rpc implementation
 * network traffic analyzer
-* unix socket
 * perform dns lookup
