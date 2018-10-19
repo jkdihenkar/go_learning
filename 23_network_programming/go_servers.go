@@ -28,6 +28,15 @@ func main() {
 	case "232":
 		// concurrent unix socket server
 		serve_utils.MainUnixSocketServerConcurrent(option)
+	case "233":
+		// concurrent rpc server
+		serve_utils.MainRPCHttpServer(option)
+	case "234":
+		// rpc client sync call
+		serve_utils.MainRPCHttpClientSync(option)
+	case "235":
+		// rpc client sync call
+		serve_utils.MainRPCHttpClientAsync(option)
 	default:
 		fmt.Println("Not a valid code section number!!")
 	}
