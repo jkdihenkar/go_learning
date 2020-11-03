@@ -11,8 +11,7 @@ use of switch case
 import (
 	"fmt"
 	"os"
-
-	"github.com/jkdihenkar/go_learning/01_basic_of_go/basics"
+	"01_basic_of_go/basics"
 )
 
 func main() {
@@ -48,7 +47,7 @@ func main() {
 
 /*
 
-[jd@jdpc go_learning]$ go run 01_basic_of_go/01_basic_of_go.go
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 
 Enter the basic go codenum to run: 011
 Hello world....
 36
@@ -56,14 +55,15 @@ j(0)|a(1)|y(2)|D(3)|
 3_4_5_6_7_
 15 123
 
-[jd@jdpc go_learning]$ go run 01_basic_of_go/01_basic_of_go.go 012 12 14 16
-0 /tmp/go-build344579483/b001/exe/01_basic_of_go
+
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 012 12 14 16
+0 /tmp/go-build359849898/b001/exe/01_basic_of_go
 1 012
 2 12
 3 14
 4 16
 
-[jd@jdpc go_learning]$ go run 01_basic_of_go/01_basic_of_go.go 013
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 013
 Initially...
 [1 2 4 -4]  | len =  4
 [[1 2 3] [4 5 6] [7 8 9]]  | len =  3
@@ -73,23 +73,22 @@ After change...
 [[1 2 3] [4 5 15] [7 8 9]]
 [[[1 2] [3 -1]] [[5 6] [7 8]]]
 Range 3D example...
-(0 [[1 2] [3 -1]]) (1 [[5 6] [7 8]])
-Manipulate by array defination -
+(0 [[1 2] [3 -1]]) (1 [[5 6] [7 8]]) 
+Manipulate by array defination - 
 [1 2 4 -4]
-Manipulate by slice defination -
+Manipulate by slice defination - 
 [1 2 99 -4]
-Slice Allocations and cap -
+Slice Allocations and cap - 
 Before = Capacity: 4, Length: 4
-1 2 99 -4
+1 2 99 -4 
 After = Capacity: 8, Length: 5
-1 2 99 -4 -199
+1 2 99 -4 -199 
 
-
-[jd@jdpc go_learning]$ go run 01_basic_of_go/01_basic_of_go.go 014
-781 163 664 155 153 365 822 152 914 654
-[jd@jdpc go_learning]$ go run 01_basic_of_go/01_basic_of_go.go 014
-923 352 823 325 438 997 564 811 421 957
-[jd@jdpc go_learning]$ go run 01_basic_of_go/01_basic_of_go.go 014
-807 822 843 923 101 616 541 919 580 772
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 014
+957 510 818 857 446 702 628 363 953 990 
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 014
+172 587 861 404 788 850 243 545 547 846 
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 014
+940 616 204 375 495 992 85 126 984 408 
 
 */
