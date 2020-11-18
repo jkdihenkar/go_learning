@@ -39,7 +39,7 @@ func main() {
 }
 
 /* SAMPLE OUTPUT -
-[jd@jdpc 02_loops_and_fizzbuzz]$ go run 02_loops_and_fizzbuzz.go
+[jay@localhost go_learning]$ go run src/02_loops_and_fizzbuzz/02_loops_and_fizzbuzz.go
 Enter the limit n: 18
 Input is 18
 
@@ -52,4 +52,10 @@ DEBUG: Value of n is 18, err = %!s(<nil>)
 12  = fizz
 15  = fizzbuzz
 18  = fizz
+
+[jay@localhost go_learning]$ go run src/02_loops_and_fizzbuzz/02_loops_and_fizzbuzz.go
+Enter the limit n: qw
+Input is qw
+
+DEBUG: Value of n is 0, err = strconv.ParseInt: parsing "qw": invalid syntax
 */

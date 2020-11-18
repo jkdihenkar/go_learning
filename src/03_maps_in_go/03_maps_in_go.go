@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 /*
 	map data type
@@ -8,15 +11,19 @@ import "fmt"
 	inline declare maps
 	range on maps demo
 	len of map and delete in map
+
+	map as json
 */
 
 func main() {
 
+	// Struct fieldnames must start with uppercase letter for JSON to see their value.
+
 	type personalDetail struct {
-		firstName       string
-		lastName        string
-		favouriteNumber int
-		isActive        bool
+		FirstName       string `json:"firstname"`
+		LastName        string `json:"lastname"`
+		FavouriteNumber int    `json:"favnum"`
+		IsActive        bool   `json:"active"`
 	}
 
 	personalDetailsMap := make(map[string]personalDetail)
@@ -24,7 +31,7 @@ func main() {
 	personalDetailsMap["jkdihenkar@gmail.com"] = personalDetail{"Jay", "Dihenkar", 6, true}
 
 	fmt.Println("Fetch personalDetails from Map - ", personalDetailsMap["jkdihenkar@gmail.com"])
-	fmt.Println("Print only fav number - ", personalDetailsMap["jkdihenkar@gmail.com"].favouriteNumber)
+	fmt.Println("Print only fav number - ", personalDetailsMap["jkdihenkar@gmail.com"].FavouriteNumber)
 
 	personalDetailsMap["garb"] = personalDetail{"GarbFN", "GarbLN", 99, false}
 
@@ -42,15 +49,38 @@ func main() {
 	persDataAutoDeclare := map[string]personalDetail{"jay": personalDetail{"Jay", "Dihenkar", 6, true}}
 	fmt.Println("Autodeclare map - ", persDataAutoDeclare, " | Length=", len(persDataAutoDeclare))
 
+	// Print value formatting +%v
+	fmt.Printf("Values for persDataAutoDeclare using printf perV :: %+v \n", persDataAutoDeclare)
+
+	jsonString, err := json.Marshal(persDataAutoDeclare)
+	//jsonString is a byteArray
+
+	fmt.Println("JSON encoded output for MAP is # ", string(jsonString))
+	fmt.Println("Error encountered while JSON encoding :: ", err)
+
 }
 
 /* OUTPUT
-[jd@jdpc go_learning]$ go run 03_maps_in_go/03_maps_in_go.go
+[jay@localhost go_learning]$ go run src/03_maps_in_go/03_maps_in_go.go
 Fetch personalDetails from Map -  {Jay Dihenkar 6 true}
 Print only fav number -  6
-Latest map -  map[jkdihenkar@gmail.com:{Jay Dihenkar 6 true} garb:{GarbFN GarbLN 99 false}]  | Length= 2
+Latest map -  map[garb:{GarbFN GarbLN 99 false} jkdihenkar@gmail.com:{Jay Dihenkar 6 true}]  | Length= 2
 jkdihenkar@gmail.com {Jay Dihenkar 6 true}
 garb {GarbFN GarbLN 99 false}
 Map after delete -  map[jkdihenkar@gmail.com:{Jay Dihenkar 6 true}]  | Length= 1
 Autodeclare map -  map[jay:{Jay Dihenkar 6 true}]  | Length= 1
+Values for persDataAutoDeclare using printf perV :: map[jay:{FirstName:Jay LastName:Dihenkar FavouriteNumber:6 IsActive:true}]
+JSON encoded output for MAP is #  {"jay":{"firstname":"Jay","lastname":"Dihenkar","favnum":6,"active":true}}
+Error encountered while JSON encoding ::  <nil>
+
+[jay@localhost go_learning]$ go run src/03_maps_in_go/03_maps_in_go.go  | grep 'JSON encoded output' | cut -d'#' -f2 | jq .
+{
+  "jay": {
+    "firstname": "Jay",
+    "lastname": "Dihenkar",
+    "favnum": 6,
+    "active": true
+  }
+}
+
 */
