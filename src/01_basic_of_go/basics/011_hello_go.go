@@ -2,6 +2,7 @@ package basics
 
 import (
 	"fmt"
+	"unsafe"
 )
 
 /*
@@ -39,6 +40,23 @@ func mainForTypes() {
 
 	// testing struct, func
 	fmt.Println(testInts().second, testInts().fourth)
+
+	// Inferred INT types (int32 for 32bit systems and int64 for 64bit systems)
+	// Let's test out
+
+	testAutoInferredType := 3778
+	fmt.Printf("Inferred type of := 3778 is Type :: %T, Size :: %d[bytes] \n", testAutoInferredType, unsafe.Sizeof(testAutoInferredType))
+
+	/*
+
+		similarly uint => uint64 for 64bit
+			float => float64
+			complex => complex128 (r float64, i float64)
+
+	*/
+
+	sampleComplex := 2.37 + 99.42i
+	fmt.Printf("Inferred type of := 2.37 + 99.42i is Type :: %T, Size :: %d[bytes] \n", sampleComplex, unsafe.Sizeof(sampleComplex))
 }
 
 type bunchOfNumbers struct {

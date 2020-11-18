@@ -36,6 +36,27 @@ func main() {
 			fmt.Println(i, " = fizz")
 		}
 	}
+
+	// there is another way to do this with expression less switch-case
+	fmt.Println("Output of fizzbuzz using switch-case :: ")
+
+	for i = 1; i <= n; i++ {
+		switch {
+		case i%15 == 0:
+			fmt.Println(i, " = fizzbuzz")
+			break
+		case i%5 == 0:
+			fmt.Println(i, " = buzz")
+			break
+		case i%3 == 0:
+			fmt.Println(i, " = fizz")
+			break
+		}
+	}
+
+	// switch t := t.(type) ==> Type Switch with case bool, case int, case *int and so on...
+	// switch cases can be combined as case 1,2,3,4: Expr... for multiple values same expr
+
 }
 
 /* SAMPLE OUTPUT -

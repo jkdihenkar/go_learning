@@ -9,9 +9,9 @@ use of switch case
 */
 
 import (
+	"01_basic_of_go/basics"
 	"fmt"
 	"os"
-	"01_basic_of_go/basics"
 )
 
 func main() {
@@ -40,6 +40,8 @@ func main() {
 		basics.MainFindReplaceDemo()
 	case "017":
 		basics.MainSortSliceDemo()
+	case "018":
+		basics.TestMultipleReturns()
 	default:
 		fmt.Println("No such demo created yet!")
 	}
@@ -47,7 +49,7 @@ func main() {
 
 /*
 
-[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go
 Enter the basic go codenum to run: 011
 Hello world....
 36
@@ -73,22 +75,35 @@ After change...
 [[1 2 3] [4 5 15] [7 8 9]]
 [[[1 2] [3 -1]] [[5 6] [7 8]]]
 Range 3D example...
-(0 [[1 2] [3 -1]]) (1 [[5 6] [7 8]]) 
-Manipulate by array defination - 
+(0 [[1 2] [3 -1]]) (1 [[5 6] [7 8]])
+Manipulate by array defination -
 [1 2 4 -4]
-Manipulate by slice defination - 
+Manipulate by slice defination -
 [1 2 99 -4]
-Slice Allocations and cap - 
+Slice Allocations and cap -
 Before = Capacity: 4, Length: 4
-1 2 99 -4 
+1 2 99 -4
 After = Capacity: 8, Length: 5
-1 2 99 -4 -199 
+1 2 99 -4 -199
 
 [jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 014
-957 510 818 857 446 702 628 363 953 990 
+957 510 818 857 446 702 628 363 953 990
 [jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 014
-172 587 861 404 788 850 243 545 547 846 
+172 587 861 404 788 850 243 545 547 846
 [jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 014
-940 616 204 375 495 992 85 126 984 408 
+940 616 204 375 495 992 85 126 984 408
+
+// Added Inferred int bytes example
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 011
+...
+...
+Inferred type of := 3778 is Type :: int, Size :: 8[bytes]
+Inferred type of := 2.37 + 99.42i is Type :: complex128, Size :: 16[bytes]
+
+// Multiple Function returns
+[jay@localhost go_learning]$ go run src/01_basic_of_go/01_basic_of_go.go 018
+0.4 <nil>
+2.25 <nil>
+0 divisor can never be zero
 
 */
