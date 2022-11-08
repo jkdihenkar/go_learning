@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jkdihenkar/go_learning/23_network_programming/serve_utils"
+	"23_network_programming/serve_utils"
 )
 
 func main() {
